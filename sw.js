@@ -10,7 +10,7 @@ var DATA = 'rb-tri-data-v1'; // data cache survives app-shell updates
 self.addEventListener('install', function (e) {
   e.waitUntil(
     caches.open(SHELL).then(function (c) {
-      return Promise.all(['./', 'index.html', 'manifest.json', 'icon-512.png', 'icon-1024.png'].map(function (u) {
+      return Promise.all(['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'].map(function (u) {
         return c.add(new Request(u, { cache: 'reload' })).catch(function () {});
       }));
     }).then(function () { return self.skipWaiting(); })
