@@ -5058,7 +5058,7 @@ function _xlRun(){
  });
  }catch(er){console.warn('xl',er);}
 }
-function _brand(){var B={en:['IMS','Study Bible'],nl:['IMS','Studiebijbel'],es:['SMI','Biblia Estudio']}[LANG]||['IMS','Study Bible'];['bn','bs'].forEach(function(p){var x=document.getElementById(p+'1'),y=document.getElementById(p+'2');if(x)x.textContent=B[0];if(y)y.textContent=B[1];});try{document.title=B[0]+' '+B[1];}catch(e){}}
+function _brand(){var B={en:['IMS','Study Bible'],nl:['ZDA','Ref Bijbel'],es:['SMI','Biblia Estudio']}[LANG]||['IMS','Study Bible'];['bn','bs'].forEach(function(p){var x=document.getElementById(p+'1'),y=document.getElementById(p+'2');if(x)x.textContent=B[0];if(y)y.textContent=B[1];});try{document.title=B[0]+' '+B[1];}catch(e){}}
 function updateNavLabels(){_brand();
  try{_xlRun();}catch(e){}
  var ids=['read','hist','plans','more'];
@@ -16422,10 +16422,10 @@ function ensureUI(){
  ge2('ttsPrev').onclick=function(){skip(-1);};
  ge2('ttsNext').onclick=function(){skip(1);};
  ge2('ttsClose').onclick=stopAll;
- ge2('ttsSpd').onclick=function(){var r=[0.8,1,1.2,1.5,1.8],i=r.indexOf(S.rate);S.rate=r[(i+1)%r.length];lsSet('rbTtsRate',String(S.rate));ge2('ttsSpd').textContent=S.rate+'×';if(AUD)AUD.playbackRate=S.rate;if(S.playing&&!useAI()){speakCur();}};
+ ge2('ttsSpd').onclick=function(){var r=[0.5,0.6,0.7,0.8,1,1.2,1.5,1.8],i=r.indexOf(S.rate);S.rate=r[(i+1)%r.length];lsSet('rbTtsRate',String(S.rate));ge2('ttsSpd').textContent=S.rate+'×';if(AUD)AUD.playbackRate=S.rate;if(S.playing&&!useAI()){speakCur();}};
  ge2('ttsVoice').onclick=function(e){e.stopPropagation();openVoiceMenu();};
  document.addEventListener('click',function(e){var m=ge2('ttsVoiceMenu');if(m&&m.classList.contains('on')&&!m.contains(e.target))m.classList.remove('on');},true);
- var r=parseFloat(lsGet('rbTtsRate'));if(r&&[0.8,1,1.2,1.5,1.8].indexOf(r)>=0)S.rate=r;
+ var r=parseFloat(lsGet('rbTtsRate'));if(r&&[0.5,0.6,0.7,0.8,1,1.2,1.5,1.8].indexOf(r)>=0)S.rate=r;
  ge2('ttsSpd').textContent=S.rate+'×';
 }
 function setPlayIcon(){
