@@ -5059,7 +5059,7 @@ function _xlRun(){
  });
  }catch(er){console.warn('xl',er);}
 }
-function _brand(){var B={en:['IMS','Study Bible'],nl:['ZDA','Ref Bijbel'],es:['SMI','Biblia Estudio']}[LANG]||['IMS','Study Bible'];['bn','bs'].forEach(function(p){var x=document.getElementById(p+'1'),y=document.getElementById(p+'2');if(x)x.textContent=B[0];if(y)y.textContent=B[1];});try{document.title=B[0]+' '+B[1];}catch(e){}}
+function _brand(){var B={en:['IMS','Study Bible'],nl:['ZDA Ref','Studiebijbel'],es:['SMI','Biblia Estudio']}[LANG]||['IMS','Study Bible'];['bn','bs'].forEach(function(p){var x=document.getElementById(p+'1'),y=document.getElementById(p+'2');if(x)x.textContent=B[0];if(y)y.textContent=B[1];});try{document.title=B[0]+' '+B[1];}catch(e){}}
 function updateNavLabels(){_brand();
  try{_xlRun();}catch(e){}
  var ids=['read','hist','plans','more'];
