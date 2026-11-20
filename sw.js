@@ -3,7 +3,7 @@
 // - data/*.json: cache-first with background refresh, so each book works offline once it has been opened.
 // - After the first load the page asks this worker to download ALL book data in the background
 //   (message {type:'precache'}), so the whole Bible + commentaries work with no connection.
-var VERSION = 'v1';
+var VERSION = 'v2';
 var SHELL = 'rb-tri-shell-' + VERSION;
 var DATA = 'rb-tri-data-v1'; // data cache survives app-shell updates
 
@@ -73,7 +73,7 @@ self.addEventListener('fetch', function (e) {
 // ---- Background download of everything for full offline use ----
 var _busy = false;
 function dataList() {
-  var l = [], i, groups = ['kjv', 'rvr1960', 'xref', 'sdabc_es', 'intro_es', 'egw_es', 'rv60words', 'hsv', 'intro', 'sdabc'];
+  var l = [], i, groups = ['kjv', 'rvr1960', 'xref', 'sdabc_es', 'intro_es', 'egw_es', 'rv60words', 'kjvwords', 'hsv', 'intro', 'sdabc'];
   l.push('data/egw_cristo.json');
   groups.forEach(function (g) { for (i = 0; i < 66; i++) l.push('data/' + g + '/' + i + '.json'); });
   l.push('data/strongs.json');
